@@ -1,0 +1,33 @@
+<p>create works!</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input id="pid" type="text" value="0" disabled></td>
+        </tr>
+        <tr>
+            <td>Code</td>
+            <td><input [(ngModel)]=cust.code></td>
+            
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]=cust.name></td>
+            
+        </tr>
+        <tr>
+            <td>Sales</td>
+            <td><input [(ngModel)]=cust.sales></td>
+            
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input [(ngModel)]=cust.active type="checkbox"></td>
+            
+        </tr>
+       
+    </tbody>
+</table>
+
+<button (click)="save()">Confirm</button>

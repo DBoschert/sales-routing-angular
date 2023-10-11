@@ -1,0 +1,31 @@
+<div>
+
+    <a routerLink="/create">CREATE</a> | 
+    <input [(ngModel)]="substr" placeholder="Search">
+    <table class="table table-sm table-striped">
+        <thead>
+
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Sales</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of custs | searchCustomer:substr">
+                <td>{{ c.id }}</td>
+                <td>{{ c.code }}</td>
+                <td>{{ c.name }}</td>
+                <td>{{ c.sales | currency}}</td>
+                <td>{{ c.active | bool:locale}}</td>
+                <td>
+                    <a routerLink="/detail/{{ c.id }}">Detail |</a>
+                    <a routerLink="/edit/{{ c.id }}"> Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
