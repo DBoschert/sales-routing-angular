@@ -4,18 +4,17 @@
     <input [(ngModel)]="substr" placeholder="Search">
     <table class="table table-sm table-striped">
         <thead>
-
             <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Sales</th>
-                <th>Active</th>
+                <th><button (click)="sortOrder('id')" class="btn btn-link">Id</button></th>
+                <th><button (click)="sortOrder('code')" class="btn btn-link">Code</button></th>
+                <th><button (click)="sortOrder('name')" class="btn btn-link">Name</button></th>
+                <th><button (click)="sortOrder('sales')" class="btn btn-link">Sales</button></th>
+                <th><button (click)="sortOrder('active')" class="btn btn-link">Active</button></th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let c of custs | searchCustomer:substr">
+            <tr *ngFor="let c of custs | searchCustomer:substr | sort:sortCol:sortAsc">
                 <td>{{ c.id }}</td>
                 <td>{{ c.code }}</td>
                 <td>{{ c.name }}</td>

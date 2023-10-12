@@ -1,0 +1,34 @@
+<p>order-list works!</p>
+
+<div>
+
+    <a routerLink="/order/order-create">CREATE</a> | 
+    <input [(ngModel)]="substr" placeholder="Search">
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th><button (click)="sortOrder('id')" class="btn btn-link">Id</button></th>
+                <th><button (click)="sortOrder('date')" class="btn btn-link">Date</button></th>
+                <th><button (click)="sortOrder('description')" class="btn btn-link">Description</button></th>
+                <th><button (click)="sortOrder('total')" class="btn btn-link">Total</button></th>
+                <th><button (click)="sortOrder('status')" class="btn btn-link">Status</button></th>
+                <th><button customerId class="btn btn-link">CustomerId</button></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of ords | searchOrder:substr | sort:sortCol:sortAsc">
+                <td>{{ o.id }}</td>
+                <td>{{ o.date }}</td>
+                <td>{{ o.description }}</td>
+                <td>{{ o.total }}</td>
+                <td>{{ o.status }}</td>
+                <td>{{ o.customerId }}</td>
+                <td>
+                    <a routerLink="/employee/employee-detail/{{ o.id }}">Detail |</a>
+                    <a routerLink="/employee/employee-edit/{{ o.id }}"> Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,29 @@
+<p>employee-edit works!</p>
+
+<table>
+    <tbody class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]=emp.id readonly></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]=emp.email></td>
+            
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]=emp.password></td>
+            
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input [(ngModel)]=emp.active ></td>
+        </tr>
+       
+    </tbody>
+</table>
+
+<div>
+    <button (click)="update()">UPDATE</button>
+</div>

@@ -1,0 +1,42 @@
+<p>order-create works!</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input id="pid" type="text" value="0" disabled></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input [(ngModel)]=ord.date type="date"></td>
+            
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input [(ngModel)]=ord.description></td>
+            
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><input [(ngModel)]=ord.total readonly></td>
+            
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input [(ngModel)]=ord.status readonly></td>
+            
+        </tr>
+        <tr>
+            <td>CustomerId</td>
+            <td>
+                <select [(ngModel)]="ord.customerId">
+                    <option *ngFor="let x of custs" value="{{ x.id }}">{{ x.name }}</option>
+                </select>
+            </td>
+            
+        </tr>
+       
+    </tbody>
+</table>
+
+<button (click)="save()" class="btn btn-primary">Confirm</button>

@@ -1,0 +1,29 @@
+<p>employee-detail works!</p>
+
+<table>
+    <tbody class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]=emp.id readonly></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]=emp.email readonly></td>
+            
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]=emp.password readonly></td>
+            
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input [(ngModel)]=emp.active readonly ></td>
+        </tr>
+       
+    </tbody>
+</table>
+
+<div>
+    <button (click)="delete()">DELETE</button>
+</div>

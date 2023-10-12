@@ -1,0 +1,28 @@
+<p>employee-create works!</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input id="pid" type="text" value="0" disabled></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]=cust.email></td>
+            
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]=cust.password></td>
+            
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input [(ngModel)]=cust.active type="checkbox"></td>
+            
+        </tr>
+       
+    </tbody>
+</table>
+
+<button (click)="save()">Confirm</button>
