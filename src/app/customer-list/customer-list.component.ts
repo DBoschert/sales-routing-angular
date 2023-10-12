@@ -10,7 +10,7 @@ import { CustomerService } from '../customer.service';
 export class CustomerListComponent {
 
   custs!: Customer[];
-  locale: string = 'fr'; // connected to the pipe in bool.pipe.ts and in customer-list.component.html
+  locale: string = 'fr'; // connected to the pipe in bool.pipe.ts and in customer-list.component.html | picks is yes and no is either in french(fr) or English(en)
   substr: string = "";
   sortCol: string = 'name'; // used to sort
   sortAsc: boolean = true; // used to sort

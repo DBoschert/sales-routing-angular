@@ -1,0 +1,28 @@
+<div>
+
+    <a routerLink="/employee/employee-create">CREATE</a> | 
+    <input [(ngModel)]="substr" placeholder="Search">
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th><button (click)="sortOrder('id')" class="btn btn-link">Id</button></th>
+                <th><button (click)="sortOrder('email')" class="btn btn-link">Email</button></th>
+                <th><button (click)="sortOrder('password')" class="btn btn-link">Password</button></th>
+                <th><button (click)="sortOrder('active')" class="btn btn-link">Active</button></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of emps | searchEmployee:substr | sort:sortCol:sortAsc">
+                <td>{{ e.id }}</td>
+                <td>{{ e.email }}</td>
+                <td>{{ e.password }}</td>
+                <td>{{ e.active | bool:locale}}</td>
+                <td>
+                    <a routerLink="/employee/employee-detail/{{ e.id }}">Detail |</a>
+                    <a routerLink="/employee/employee-edit/{{ e.id }}"> Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
