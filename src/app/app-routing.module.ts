@@ -20,33 +20,45 @@ import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
 import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
 import { OrderlineDeleteComponent } from './orderline/orderline-delete/orderline-delete.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ItemDetailComponent } from './item/item-detail/item-detail.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
 
+  // Customers
   { path: "customer-list", component: CustomerListComponent }, // customer list
   { path: "create", component: CreateComponent }, //customer create
   { path: "detail/:id", component: DetailComponent }, //passes in id for the url by using :id | customer detail
   { path: "edit/:id", component: EditComponent }, // customer edit
   
+  // Employees
   { path: "employee/login", component: LoginComponent }, // employee login
   { path: "employee/employee-list", component: EmployeeListComponent }, // employee List
   { path: "employee/employee-create", component: EmployeeCreateComponent }, // employee create
   { path: "employee/employee-detail/:id", component: EmployeeDetailComponent }, // employee detail
   { path: "employee/employee-edit/:id", component: EmployeeEditComponent }, // employee edit
   
+  // Orders
   { path: "order/order-create", component: OrderCreateComponent }, // order create
   { path: "order/order-list", component: OrderListComponent }, // order create
   { path: "order/order-detail/:id", component: OrderDetailComponent }, // order detail
   { path: "order/order-edit/:id", component: OrderEditComponent }, // order edit
   { path: "order/order-lines/:id", component: OrderLinesComponent }, // order create
 
+  // Orderlines
   { path: "ordl/add/:oid", component: OrderlineCreateComponent }, // orderline create | "oid" is a orderid
   { path: "ordl/edit/:id", component: OrderlineEditComponent }, // orderline edit
   { path: "ordl/delete/:id", component: OrderlineDeleteComponent }, // orderline delete
- 
 
+  // Items
+  { path: "item/item-list", component: ItemListComponent }, // item list
+  { path: "item/item-create", component: ItemCreateComponent }, // item create
+  { path: "item/item-detail/:id", component: ItemDetailComponent }, // item detail
+  { path: "item/item-edit/:id", component: ItemEditComponent }, // item edit
 
   { path: "about", component: AboutComponent },
   { path: "**", component: E404Component }

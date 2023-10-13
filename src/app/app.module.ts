@@ -31,6 +31,11 @@ import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
 import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
 import { OrderlineDeleteComponent } from './orderline/orderline-delete/orderline-delete.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
+import { SearchItemPipe } from './item/search-item.pipe';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ItemDetailComponent } from './item/item-detail/item-detail.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +65,12 @@ import { OrderlineDeleteComponent } from './orderline/orderline-delete/orderline
     OrderLinesComponent,
     OrderlineCreateComponent,
     OrderlineEditComponent,
-    OrderlineDeleteComponent
+    OrderlineDeleteComponent,
+    ItemListComponent,
+    SearchItemPipe,
+    ItemCreateComponent,
+    ItemDetailComponent,
+    ItemEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

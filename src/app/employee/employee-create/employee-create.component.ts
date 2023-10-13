@@ -21,7 +21,7 @@ export class EmployeeCreateComponent {
       this.empsvc.create(this.cust).subscribe({
         next: (res) => {
           console.debug("Created!");
-          this.router.navigateByUrl("/employee/employee-list"); // navigates back to customer-list
+          this.router.navigateByUrl("/employee/employee-list"); // navigates back to employee-list
 
         },
         error: (err) => {

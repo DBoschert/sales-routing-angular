@@ -1,0 +1,23 @@
+<a href="/item/item-create">CREATE</a>
+<input [(ngModel)]="substr" placeholder="Search">
+<table>
+    <thead>
+        <tr>
+            <th><button (click)="sortOrder('id')" class="btn btn-link">Id</button></th>
+            <th><button (click)="sortOrder('name')" class="btn btn-link">Name</button></th>
+            <th><button (click)="sortOrder('price')" class="btn btn-link">Price</button></th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of items | searchItem:substr | sort:sortCol:sortAsc">
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.price | currency}}</td>
+            <td>
+                <a routerLink="/item/item-detail/{{ i.id }}">Detail |</a>
+                <a routerLink="/item/item-edit/{{ i.id }}"> Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
