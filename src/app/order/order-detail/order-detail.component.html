@@ -1,0 +1,36 @@
+
+<table>
+    <tbody class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]=ord.id readonly></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input [(ngModel)]=ord.date readonly></td>
+            
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input [(ngModel)]=ord.description readonly></td>
+            
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><input [(ngModel)]=ord.total readonly ></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input [(ngModel)]=ord.status readonly ></td>
+        </tr>
+        <tr>
+            <td>CustomerId</td>
+            <td><input [(ngModel)]=ord.customerId readonly ></td>
+        </tr>
+       
+    </tbody>
+</table>
+
+<div>
+    <button (click)="delete()">DELETE</button>
+</div>

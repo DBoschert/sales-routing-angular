@@ -25,6 +25,12 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { SearchOrderPipe } from './order/search-order.pipe';
+import { OrderDetailComponent } from './order/order-detail/order-detail.component';
+import { OrderEditComponent } from './order/order-edit/order-edit.component';
+import { OrderLinesComponent } from './order/order-lines/order-lines.component';
+import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
+import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
+import { OrderlineDeleteComponent } from './orderline/orderline-delete/orderline-delete.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,13 @@ import { SearchOrderPipe } from './order/search-order.pipe';
     EmployeeEditComponent,
     OrderCreateComponent,
     OrderListComponent,
-    SearchOrderPipe
+    SearchOrderPipe,
+    OrderDetailComponent,
+    OrderEditComponent,
+    OrderLinesComponent,
+    OrderlineCreateComponent,
+    OrderlineEditComponent,
+    OrderlineDeleteComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

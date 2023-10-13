@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class OrderService {
 
-  url: string = "http://localhost:5555/api/Orders";
+  url: string = "http://localhost:5555/api/orders";
+  newurl: string = "http://localhost:5555/api/orderlines";
 
   constructor(
     private http: HttpClient
@@ -27,7 +28,15 @@ export class OrderService {
   change(Order: Order): Observable<any>{ //can put any because it doesn't return anything
     return this.http.put(`${this.url}/${Order.id}`, Order) as Observable<any>;
   }
+  backorder(ord: Order): Observable<any>{ //can put any because it doesn't return anything
+    return this.http.put(`${this.url}/backorder/${ord.id}`, ord) as Observable<any>;
+  }
   remove(id: number): Observable<any>{
     return this.http.delete(`${this.url}/${id}`) as Observable<any>;
   }
+  removeOl(id: number): Observable<any>{
+    return this.http.delete(`${this.newurl}/${id}`) as Observable<any>; 
+
+  }
+
 }

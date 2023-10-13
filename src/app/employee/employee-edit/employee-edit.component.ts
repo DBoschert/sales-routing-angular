@@ -10,13 +10,12 @@ import { Employee } from '../employee.class';
 })
 export class EmployeeEditComponent {
 
-    // cust!: Customer;
-    emp: Employee = new Employee(); //put instead of "cust!: Customer" to fix a ton of pointless errors
+    emp: Employee = new Employee(); 
 
   
     constructor(
       private empsvc: EmployeeService,
-      private route: ActivatedRoute, // need to use the activated route to read the path variable
+      private route: ActivatedRoute, 
       private router: Router
       ) {}
       ngOnInit(): void {
@@ -36,7 +35,7 @@ export class EmployeeEditComponent {
         this.empsvc.change(this.emp).subscribe({
           next: (res) => {
             console.debug("Changed!");
-            this.router.navigateByUrl("/employee/employee-list"); // navigates back to customer-list
+            this.router.navigateByUrl("/employee/employee-list"); 
   
           },
           error: (err) => {
