@@ -4,5 +4,4 @@ export class Customer {
     name: string = "";
     sales: number = 0;
     active: boolean = true;
-
 }

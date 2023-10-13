@@ -1,0 +1,30 @@
+<p>orderline-delete works!</p>
+
+<div>
+
+    <table class="table table-sm">
+        <tbody>
+            <tr>
+                <td>Id:</td>
+                <td><input [(ngModel)]="ordl.id" type="number" readonly></td>
+                
+            </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td><input [(ngModel)]="ordl.quantity" type="number" readonly></td>
+            
+        </tr>
+        <tr>
+            <td>Item:</td>
+            <td>
+                <select [(ngModel)]="ordl.itemId">
+                    <option *ngFor="let x of items" value="{{ x.id }}">{{ x.name }}</option>
+                </select>
+            </td>
+       </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="delete()" class="btn btn-primary">Delete</button>
+</div>
+</div>

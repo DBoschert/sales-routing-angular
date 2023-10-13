@@ -14,6 +14,12 @@ import { EmployeeCreateComponent } from './employee/employee-create/employee-cre
 import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
+import { OrderDetailComponent } from './order/order-detail/order-detail.component';
+import { OrderEditComponent } from './order/order-edit/order-edit.component';
+import { OrderLinesComponent } from './order/order-lines/order-lines.component';
+import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
+import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
+import { OrderlineDeleteComponent } from './orderline/orderline-delete/orderline-delete.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -32,6 +38,15 @@ const routes: Routes = [
   
   { path: "order/order-create", component: OrderCreateComponent }, // order create
   { path: "order/order-list", component: OrderListComponent }, // order create
+  { path: "order/order-detail/:id", component: OrderDetailComponent }, // order detail
+  { path: "order/order-edit/:id", component: OrderEditComponent }, // order edit
+  { path: "order/order-lines/:id", component: OrderLinesComponent }, // order create
+
+  { path: "ordl/add/:oid", component: OrderlineCreateComponent }, // orderline create | "oid" is a orderid
+  { path: "ordl/edit/:id", component: OrderlineEditComponent }, // orderline edit
+  { path: "ordl/delete/:id", component: OrderlineDeleteComponent }, // orderline delete
+ 
+
 
   { path: "about", component: AboutComponent },
   { path: "**", component: E404Component }

@@ -1,4 +1,4 @@
-<p>order-list works!</p>
+
 
 <div>
 
@@ -25,8 +25,9 @@
                 <td>{{ o.status }}</td>
                 <td>{{ o.customerId }}</td>
                 <td>
-                    <a routerLink="/employee/employee-detail/{{ o.id }}">Detail |</a>
-                    <a routerLink="/employee/employee-edit/{{ o.id }}"> Edit</a>
+                    <a routerLink="/order/order-detail/{{ o.id }}">Detail |</a>
+                    <a routerLink="/order/order-edit/{{ o.id }}"> Edit</a> |
+                    <a routerLink="/order/order-lines/{{ o.id }}"> Lines</a> |
                 </td>
             </tr>
         </tbody>

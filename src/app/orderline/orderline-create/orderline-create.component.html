@@ -1,0 +1,26 @@
+<p>orderline-create works!</p>
+
+<div>
+
+    <table class="table table-sm">
+        <tbody>
+        <tr>
+            <td>Quantity:</td>
+            <td><input [(ngModel)]="ordl.quantity" type="number"></td>
+            
+        </tr>
+        <tr>
+            <td>Item:</td>
+            <td>
+                <select [(ngModel)]="ordl.itemId">
+                    <option *ngFor="let x of items" value="{{ x.id }}">{{ x.name }}</option>
+                </select>
+            </td>
+       </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>
+
+</div>

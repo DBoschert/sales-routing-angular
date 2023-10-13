@@ -1,0 +1,56 @@
+<div id="component">
+    <a routerLink="/order/order-list">Return to list...</a>
+    <table class="table table-sm" *ngIf="ord">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Customer</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ ord.id }}</td>
+                <td>{{ ord.description }}</td>
+                <td>{{ ord.status }}</td>
+                <td>{{ ord.total | currency}}</td>
+                <td>{{ ord.customer?.name }}</td>
+                <td>
+                    <button (click)="backorder()" class="btn btn-primary btn-link">Backorder</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<!-- ngIf gets rid of the null error -->
+    <a routerLink="/ordl/add/{{ ord.id }}" *ngIf="ord">Create New</a>
+
+    <table class="table table-sm table-striped" *ngIf="ord">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>SubTotal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of ord.orderLines">
+                <td>{{ x.id }}</td>
+                <td>{{ x.item?.name }}</td>
+                <td>{{ x.quantity }}</td>
+                <td>{{ x.item?.price | currency }}</td>
+                <td>{{ x.quantity * x.item?.price! | currency }}</td>
+                <a routerLink="/ordl/edit/{{ x.id }}">Edit | </a>
+                <!-- <a routerLink="/ordl/delete/{{ x.id }}">Delete</a> -->
+                <button (click)="clicked()">Delete</button>
+                <button *ngIf="verifyDelete === true" (click)="remove(x.id)" class="btn btn-primary">Verify Delete</button>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
