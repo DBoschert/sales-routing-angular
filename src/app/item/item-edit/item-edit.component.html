@@ -1,0 +1,21 @@
+<table>
+    <tbody class="table table-sm">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]=item.id readonly></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]=item.name></td>
+            
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input [(ngModel)]=item.price></td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <button (click)="update()">UPDATE</button>
+</div>

@@ -31,6 +31,12 @@ export class OrderService {
   backorder(ord: Order): Observable<any>{ //can put any because it doesn't return anything
     return this.http.put(`${this.url}/backorder/${ord.id}`, ord) as Observable<any>;
   }
+  ok(ord: Order): Observable<any>{ //can put any because it doesn't return anything
+    return this.http.put(`${this.url}/ok/${ord.id}`, ord) as Observable<any>;
+  }
+  closed(ord: Order): Observable<any>{ //can put any because it doesn't return anything
+    return this.http.put(`${this.url}/closed/${ord.id}`, ord) as Observable<any>;
+  }
   remove(id: number): Observable<any>{
     return this.http.delete(`${this.url}/${id}`) as Observable<any>;
   }

@@ -1,0 +1,24 @@
+<div>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input id="pid" type="text" value="0" disabled></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]=item.name></td>
+            
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input [(ngModel)]=item.price></td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="save()">CREATE</button>
+
+</div>

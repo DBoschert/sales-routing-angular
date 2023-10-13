@@ -37,6 +37,28 @@ export class OrderLinesComponent {
       }
     });
   }
+  ok(): void {
+    this.ordsvc.ok(this.ord).subscribe({
+      next: (res) => {
+        console.debug("Placed on ok!");
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+  closed(): void {
+    this.ordsvc.closed(this.ord).subscribe({
+      next: (res) => {
+        console.debug("Placed on ok!");
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
 
   refresh(): void {
     let id = +this.route.snapshot.params["id"]; // gets the id
