@@ -16,6 +16,7 @@ export class OrderLinesComponent {
   ord!: Order;
   message: string = "";
   verifyDelete: boolean = false;
+  count: number = 1;
   ordl: Orderline = new Orderline();
 
   constructor(
@@ -75,7 +76,13 @@ export class OrderLinesComponent {
   }
 
   clicked(): void {
-    this.verifyDelete = true; // calls refresh in ngOnInit
+    if(this.count % 2 === 1){
+      this.verifyDelete = true; // calls refresh in ngOnInit
+    }
+    else{
+      this.verifyDelete = false;
+    }
+    this.count++;
   }
 
   remove(id:number): void {
@@ -86,6 +93,7 @@ export class OrderLinesComponent {
         console.log("Deleted...");
         this.refresh();
         this.verifyDelete = false;
+        this.count++;
 
       },
       error: (err) => {

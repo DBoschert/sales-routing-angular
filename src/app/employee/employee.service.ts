@@ -8,6 +8,7 @@ import { Employee } from './employee.class';
 })
 export class EmployeeService {
 
+  // get url() { return `${this.init.congif.baseurl}/api/employees`; }
   url: string = "http://localhost:5555/api/employees";
 
   constructor(

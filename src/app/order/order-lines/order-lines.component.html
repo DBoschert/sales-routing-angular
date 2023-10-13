@@ -18,20 +18,17 @@
                 <td>{{ ord.status }}</td>
                 <td>{{ ord.total | currency}}</td>
                 <td>{{ ord.customer?.name }}</td>
-                <td>
-                    <button (click)="ok()" class="btn btn-primary btn-link">Ok</button>
-                </td>
-                <td>
-                    <button (click)="backorder()" class="btn btn-primary btn-link">Backorder</button>
-                </td>
-                <td>
-                    <button (click)="closed()" class="btn btn-primary btn-link">Closed</button>
-                </td>
             </tr>
         </tbody>
     </table>
 <!-- ngIf gets rid of the null error -->
-    <a routerLink="/ordl/add/{{ ord.id }}" *ngIf="ord">Create New</a>
+    <a routerLink="/ordl/add/{{ ord.id }}" *ngIf="ord">Create New</a> <br>
+
+        <button (click)="ok()" class="btn btn-primary btn-link">Ok</button>
+
+        <button (click)="backorder()" class="btn btn-primary btn-link">Backorder</button>
+
+        <button (click)="closed()" class="btn btn-primary btn-link">Closed</button>
 
     <table class="table table-sm table-striped" *ngIf="ord">
         <thead>
